@@ -374,7 +374,14 @@
             System.out.println("  --> Generate File : " + pathFile ) ;
             return pathFile                                          ;
         }
-
+  
+        private static String removeDoubleQuotes(String arg)                 {
+           if( ( arg.trim().startsWith("\"") && arg.trim().endsWith("\"") ) ||
+               ( arg.trim().startsWith("'") && arg.trim().endsWith("'") ) )  {
+               return arg.substring( 1, arg.length() - 1 ) ;
+           }
+           return arg ;
+        }
 
         public static void main( String[] args) throws IOException    {
             
@@ -408,7 +415,7 @@
                                                 break ;
                     case "-out"               : outs.add(args[i+1])                          ;
                                                 break ;
-                    case "-q"                 : queries.add(args[i+1])                       ;
+                    case "-q"                 : queries.add(removeDoubleQuotes (args[i+1]))  ;
                                                 break ;
                     case "-f"                 : fragments.add(Integer.parseInt( args[i+1]) ) ;
                                                 break ;
