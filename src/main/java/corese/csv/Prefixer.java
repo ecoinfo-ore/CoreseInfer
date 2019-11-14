@@ -440,7 +440,7 @@ public class Prefixer {
        
         if ( prefixFile == null && full_uri == false ) {
            System.out.println(" if -prefix is NULL, you have to " + 
-                              " enable [ -enable_full_path ] " )  ;
+                              " enable [ -enable_full_uri ] " )   ;
            System.exit(0) ;
         }
         
