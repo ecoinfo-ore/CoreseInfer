@@ -470,8 +470,6 @@
             System.out.println(" FLUSH_COUNT       : " + flushCount        ) ;
             System.out.println(" EXTENSION         : " + extension         ) ;
             System.out.println(" IGNORE_LINE_BREAK : " + ignore_line_break ) ;
-            System.out.println(" XMS               : " + ignore_line_break ) ;
-            System.out.println(" XMX               : " + ignore_line_break ) ;
             System.out.println("                                          ") ;
          
             List<String> entryFiles = new ArrayList<>()  ; 
