@@ -66,11 +66,11 @@
                   ld = Load.create(g)           ;
                   loadFiles( filesToLoad  )     ;
             }
-            catch (Exception ex) {
+            catch (Exception ex)       {
                   ex.printStackTrace() ;
-                  Throwable[] suppressed = ex.getSuppressed();
-                  for(Throwable cause : suppressed ) {
-                      System.err.println(cause.getMessage()) ;
+                  Throwable[] suppressed = ex.getSuppressed() ;
+                  for(Throwable cause : suppressed )          {
+                      System.err.println(cause.getMessage())  ;
                   }
                   System.out.println(" ") ;
             }
@@ -78,12 +78,12 @@
         
         private static void loadFiles ( List<String> filesToLoad ) {
            
-            for( String file : filesToLoad   )   {
+            for( String file : filesToLoad   )  {
                  loadFile( file ) ;
             }
         }
         
-        private static void loadFile ( String fileToLoad ) {
+        private static void loadFile ( String fileToLoad )       {
            
             System.out.println(" Loading file : " + fileToLoad ) ;
             ld.load( fileToLoad )   ;
@@ -104,10 +104,12 @@
            dt.getLang()         ;
            */
            
-           if ( dt.getLang() != null )     {
-             return "\"" + dt.getLabel()
-                    .replaceAll("\"", "'") 
-                    + "\"@" + dt.getLang() ;
+           if ( dt.getLang() != null )        {
+             return "\""                      + 
+                    dt.getLabel()
+                      .replaceAll("\"", "'")  +
+                      "\"@"                   +
+                      dt.getLang()            ;
            }
            
            if (dt.isURI() || dt.isBlank() )  {
@@ -131,14 +133,14 @@
                                     String  extension
                                   ) throws  IOException    {
               
-                QueryProcess exec      =  QueryProcess.create(g) ;
-                Mappings     map       =  null                   ;
+                QueryProcess exec =  QueryProcess.create(g) ;
+                Mappings     map  =  null                   ;
                 
                 try {
                         map = exec.query(request ) ;
                 } catch (EngineException e) {
                         System.out.println(" -------- " ) ;
-                          e.printStackTrace()             ;
+                        e.printStackTrace()               ;
                         System.out.println(" -------- " ) ;
                 }
 
@@ -158,9 +160,9 @@
                                                    loop       ,
                                                    extension  ) ;
                     
-                    Writer.checkFile( currentFile )           ;
+                    Writer.checkFile( currentFile )             ;
 
-                    for ( Mapping m : map ) {
+                    for ( Mapping m : map )                            {
 
                         for(String variable : variables )              {
                             String dt =  toStringDataType(m, variable) ;
@@ -362,12 +364,12 @@
         }      
 
         private static void printStartLine() {
-          System.out.println( " ***************************"
-                              + "************************** " )  ;
+          System.out.println( " ***************************"  +
+                              "************************** " ) ;
         }
         private static void printSnakeLine() {
-           System.out.println("----------------------------"
-                              + "----------------------"      )  ;
+           System.out.println( "----------------------------"  +
+                               "----------------------"      ) ;
         }
         
         private static String printInfoFile ( String pathFile )      {
