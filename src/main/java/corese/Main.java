@@ -409,29 +409,29 @@
                 
                 switch(token) {
                     
-                    case "-owl"               : owls.add(args[i+1])                          ;
+                    case "-owl"               : owls.add(removeDoubleQuotes(args[i+1]))                          ;
                                                 break ;
-                    case "-ttl"               : ttl.add(args[i+1])                           ;
+                    case "-ttl"               : ttl.add(removeDoubleQuotes(args[i+1]))                           ;
                                                 break ;
-                    case "-out"               : outs.add(args[i+1])                          ;
+                    case "-out"               : outs.add(removeDoubleQuotes(args[i+1]))                          ;
                                                 break ;
-                    case "-q"                 : queries.add(removeDoubleQuotes (args[i+1]))  ;
+                    case "-q"                 : queries.add(removeDoubleQuotes(args[i+1]))                       ;
                                                 break ;
-                    case "-f"                 : fragments.add(Integer.parseInt( args[i+1]) ) ;
+                    case "-f"                 : fragments.add(Integer.parseInt( removeDoubleQuotes(args[i+1])) ) ;
                                                 break ;
-                    case "-e"                 : entailment = true                            ;
+                    case "-e"                 : entailment = true                                                ;
                                                 break ;
-                    case "-F"                 : formats.add(args[i+1].toUpperCase())         ;
+                    case "-F"                 : formats.add( removeDoubleQuotes(args[i+1].toUpperCase()))        ;
                                                 break ;
-                    case "-log"               : log = args[i+1]                              ;
+                    case "-log"               : log = removeDoubleQuotes(removeDoubleQuotes(args[i+1]))          ;
                                                 break ;
-                    case "-peek" :              peek = Integer.parseInt(args[i+1])           ;
+                    case "-peek" :              peek = Integer.parseInt(removeDoubleQuotes(args[i+1]))           ;
                                                 break ;
-                    case "-flushCount"        : flushCount = Integer.parseInt(args[i+1])     ;
+                    case "-flushCount"        : flushCount = Integer.parseInt(removeDoubleQuotes(args[i+1]))     ;
                                                 break ;                                   
-                    case "-ignore_line_break" : ignore_line_break = true                     ;
+                    case "-ignore_line_break" : ignore_line_break = true                                         ;
                                                 break ;
-                    case "-extension"         : extension = args[i+1]                        ;
+                    case "-extension"         : extension = removeDoubleQuotes(args[i+1])                        ;
                                                 break ;
                 }
             }
